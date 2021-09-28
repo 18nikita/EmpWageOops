@@ -4,7 +4,7 @@ public class EmpWage {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to employee wage");
-		WageTillCondition();
+		EmployeeWage();
 	}
 
 	// Constatnts
@@ -14,13 +14,12 @@ public class EmpWage {
 	static final int WORKING_DAYS_IN_MONTH = 20;
 	static final int MAX_HOURS_IN_MONTH = 100;
 
-	public static void WageTillCondition() {
-		// UC-6-Wage till condition of total working hour is reached in month
-		// Variables
+	public static void EmployeeWage() {
+
+		// Loacl Variables
 		int empHrs = 0;
 		int totalWorkday = 0;
 		int totalEmpHrs = 0;
-		int totalWage = 0;
 
 		while (totalEmpHrs <= MAX_HOURS_IN_MONTH && totalWorkday < WORKING_DAYS_IN_MONTH) {
 			totalWorkday++;
