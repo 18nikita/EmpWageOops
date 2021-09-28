@@ -4,38 +4,43 @@ public class EmpWage {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to employee wage");
-		PartTimeWage();
+		UsingSwitchCase();
 	}
 
-	public static void PartTimeWage() {
-		// UC-3-Part time employee wage calculation
+	public static void UsingSwitchCase() {
+		// UC-4-Solve employee wage using case statement
 
 		// Constants
-		int IS_FULL_TIME = 1;
-		int IS_PART_TIME = 2;
-		int EMP_RATE_PER_HOUR = 20;
+		final int IS_FULL_TIME = 1;
+		final int IS_PART_TIME = 2;
+		final int EMP_RATE_PER_HOUR = 20;
 
 		// Variables
 		int empHrs = 0;
 		int empWage = 0;
 
 		// Computation
-		double empCheck = Math.floor(Math.random() * 10) % 3;
+		int empCheck = (int) (Math.random() * 100) % 3;
 
-		if (empCheck == IS_PART_TIME) {
-			empHrs = 4;
-			System.out.println("Employee is PartTime");
-		}
-
-		else if (empCheck == IS_FULL_TIME) {
+		switch (empCheck) {
+		case IS_FULL_TIME:
 			empHrs = 8;
-			System.out.println("Employee is FullTime");
-		} else {
-			System.out.println("Employee is Absent");
-		}
+			System.out.println("Employee is present full time");
+			break;
 
-		// Formula
+		case IS_PART_TIME:
+			empHrs = 4;
+			System.out.println("Employee is present part time");
+			break;
+
+		default:
+			empHrs = 0;
+			System.out.println("Employee is absent");
+			break;
+
+		}
 		empWage = empHrs * EMP_RATE_PER_HOUR;
-		System.out.println("Employee Wage is: " + empWage);
+		System.out.println("Employee Wage is :" + empWage);
+
 	}
 }
